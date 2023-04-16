@@ -1,11 +1,17 @@
 function Header() {
   return (
     <div className="header">
-      <i className="fa-brands fa-github"></i>
+      <div className="github-icon-container">
+        <i className="fa-brands fa-github"></i>
+      </div>
+
       <div className="input-container">
         <input type="text" placeholder="Search Users" />
-        <i className="fa-solid fa-magnifying-glass"></i>
+        <div className="glass-container">
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </div>
       </div>
+
       <i className="fa-solid fa-sun"></i>
     </div>
   )

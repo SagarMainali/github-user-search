@@ -1,25 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
 
 
-@mixin flex-props{
+@mixin flex-props {
      display: flex;
      justify-content: center;
      align-items: center;
 }
 
-$darkbg: #23272F;
-$lightbg: #FFFFFF;
+// variables used
+$dark: #23272F;
+$light: #FFFFFF;
+$ph-sa: #747272;
+$search-icon-bg: #F2F2F2;
+$link: #539BF5;
 
-*{
+* {
      margin: 0;
+     padding: 0;
      box-sizing: border-box;
      font-family: 'Actor';
 }
 
-body{
-     background-color: $darkbg;
+body {
+     background-color: $dark;
+     padding: 20px;
 }
 
-.header{
+.header {
      @include flex-props;
+     color: $light;
+
+     .github-icon-container {
+          height: 50px;
+          width: 50px;
+          background-color: $light;
+          border-radius: 8px;
+          @include flex-props;
+
+          .fa-github {
+               color: $dark;
+          }
+     }
+
+
+     .input-container {
+          margin: 0 15px;
+          height: 50px;
+          width: 400px;
+          display: flex;
+          border-radius: 8px;
+          overflow: hidden;
+
+          input {
+               width: 85%;
+               height: 100%;
+               border: 0;
+               outline: 0;
+               padding: 15px;
+          }
+
+          .glass-container {
+               width: 15%;
+               height: 100%;
+               background-color: $search-icon-bg;
+               cursor: pointer;
+               @include flex-props;
+
+               .fa-magnifying-glass {
+                    font-size: 20px;
+                    color: $ph-sa;
+               }
+          }
+
+     }
+
+     .fa-sun {
+          font-size: 20px;
+          cursor: pointer;
+     }
 }
