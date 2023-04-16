@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
 
-
 @mixin flex-row-center {
      display: flex;
      justify-content: center;
@@ -46,6 +45,7 @@ body {
 }
 
 .app {
+     padding-bottom: 20px;
      max-width: 900px;
      margin: auto;
 }
@@ -54,12 +54,13 @@ body {
 
 .header {
      @include flex-row-center;
-     margin-top: 40px;
+     margin: auto;
+     margin-top: 20px;
      color: $light;
 
      .github-icon-container {
-          height: 50px;
-          width: 50px;
+          height: 40px;
+          width: 40px;
           background-color: $light;
           border-radius: 8px;
           @include flex-row-center;
@@ -72,7 +73,7 @@ body {
 
      .input-container {
           margin: 0 15px;
-          height: 50px;
+          height: 40px;
           width: 400px;
           display: flex;
           border-radius: 8px;
@@ -84,8 +85,9 @@ body {
                border: 0;
                outline: 0;
                padding: 18px;
-               font-size: 16px;
+               font-size: 14px;
                letter-spacing: .6px;
+               font-weight: bold;
 
                &::placeholder {
                     color: $ph-sa;
@@ -121,109 +123,105 @@ body {
 
 // search-result component
 
+// .search-result > *{
+//      border: 1px solid white;
+// }
+
 .search-result {
-     width: 100%;
-     display: grid;
-     grid-template-columns: 200px 500px;
+     @include flex-col-gap;
+     margin: auto;
+     width: 500px;
      color: $light;
-     margin-top: 40px;
+     margin-top: 30px;
 
      .profile-container {
-          width: 200px;
-
+          
           .img-container {
                margin: auto;
                box-sizing: content-box;
                border: 2px solid $light;
                border-radius: 50%;
-               height: 132px;
-               width: 132px;
+               height: 122px;
+               width: 122px;
                padding: 4px;
 
                .img {
-                    height: 132px;
-                    width: 132px;
+                    height: 122px;
+                    width: 122px;
                     border-radius: 50%;
                }
           }
      }
 
-     .data-container {
+     .number-data {
+          margin-top: -10px;
+          width: 100%;
+          height: 100px;
+          background-color: $box-clr;
+          border-radius: 16px;
+          @include flex-row-center;
+          justify-content: space-around;
+
+          .nd {
+               @include flex-col;
+
+               span {
+                    font-size: 34px;
+                    margin-bottom: 6px;
+               }
+
+               p {
+                    font-size: 14px;
+               }
+          }
+     }
+
+     .for-padding {
+          padding: 0 18px;
           @include flex-col-gap;
-          gap: 30px;
-          width: 500px;
-          padding-top: 10px;
 
-          .number-data {
-               width: 100%;
-               height: 122px;
-               background-color: $box-clr;
-               border-radius: 16px;
-               @include flex-row-center;
-               justify-content: space-around;
+          .basic-info {
 
-               .nd {
-                    @include flex-col;
+               h2 {
+                    font-size: 24px;
+               }
 
-                    span {
-                         font-size: 34px;
-                         margin-bottom: 6px;
-                    }
+               .link-jd {
+                    @include flex-row-between;
 
-                    p {
-                         font-size: 14px;
+                    a {
+                         color: $link;
+                         font-size: 16px;
+                         text-decoration: none;
                     }
                }
           }
 
-          .for-padding {
-               padding: 0 18px;
-               @include flex-col-gap;
+          // .bio{
+          // }
 
-               .basic-info {
+          .additional-info {
 
-                    h2 {
-                         font-size: 24px;
-                    }
-
-                    .link-jd {
-                         @include flex-row-between;
-
-                         a {
-                              color: $link;
-                              font-size: 16px;
-                              text-decoration: none;
-                         }
-                    }
+               .hr-top {
+                    margin-bottom: 15px;
                }
 
-               // .bio{
-               // }
+               .hr-bottom {
+                    margin-top: 5px;
+               }
 
-               .additional-info {
+               .ai-ul {
+                    @include flex-row-between;
 
-                    .hr-top {
-                         margin-bottom: 15px;
-                    }
+                    li {
+                         list-style: none;
+                         margin-bottom: 12px;
 
-                    .hr-bottom {
-                         margin-top: 5px;
-                    }
-
-                    .ai-ul {
-                         @include flex-row-between;
-
-                         li {
-                              list-style: none;
-                              margin-bottom: 12px;
-
-                              i {
-                                   margin-right: 10px;
-                              }
+                         i {
+                              margin-right: 10px;
                          }
                     }
                }
           }
      }
-
 }

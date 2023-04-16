@@ -1,5 +1,13 @@
-@media all and (max-width: 950px) {
+@media all and (max-width: 550px) {
      body {
           background-color: red !important;
+     }
+
+     .input-container {
+          width: 350px !important;
+     }
+
+     .search-result{
+          width: 450px;
      }
 }

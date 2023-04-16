@@ -6,7 +6,7 @@ function Header() {
       </div>
 
       <div className="input-container">
-        <input type="text" placeholder="Search Users" />
+        <input className="search-user" type="text" placeholder="Search Users -> sagarmainali" />
         <div className="glass-container">
           <i className="fa-solid fa-magnifying-glass"></i>
         </div>
