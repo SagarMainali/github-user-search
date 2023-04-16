@@ -9,7 +9,7 @@ export function SearchResult() {
         </div>
       </div>
 
-      <div className="number-data">
+      <div className="numbered-data">
         <div className="nd repos">
           <span>22</span>
           <p>Repos</p>
