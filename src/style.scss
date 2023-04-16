@@ -1,10 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
 
 
-@mixin flex-props {
+@mixin flex-row-center {
      display: flex;
      justify-content: center;
      align-items: center;
+}
+
+@mixin flex-row-between {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+@mixin flex-col {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+@mixin flex-col-gap {
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
 }
 
 // variables used
@@ -29,12 +48,11 @@ body {
 .app {
      max-width: 900px;
      margin: auto;
-     border: 1px solid red
 }
 
 .header {
-     @include flex-props;
-     margin-top: 30px;
+     @include flex-row-center;
+     margin-top: 40px;
      color: $light;
 
      .github-icon-container {
@@ -42,7 +60,7 @@ body {
           width: 50px;
           background-color: $light;
           border-radius: 8px;
-          @include flex-props;
+          @include flex-row-center;
 
           .fa-github {
                color: $dark;
@@ -74,7 +92,7 @@ body {
                height: 100%;
                background-color: $search-icon-bg;
                cursor: pointer;
-               @include flex-props;
+               @include flex-row-center;
 
                .fa-magnifying-glass {
                     font-size: 20px;
@@ -94,10 +112,6 @@ body {
           cursor: pointer;
           transition: 200ms;
      }
-}
-
-.search-result>* {
-     border: 1px solid gray;
 }
 
 .search-result {
@@ -128,6 +142,8 @@ body {
      }
 
      .data-container {
+          @include flex-col-gap;
+          gap: 30px;
           width: 500px;
           padding-top: 10px;
 
@@ -136,9 +152,64 @@ body {
                height: 122px;
                background-color: $box-clr;
                border-radius: 16px;
-               @include flex-props;
+               @include flex-row-center;
                justify-content: space-around;
+
+               .nd {
+                    @include flex-col;
+
+                    span {
+                         font-size: 34px;
+                         margin-bottom: 6px;
+                    }
+               }
           }
+
+          .basic-info {
+
+               h2 {
+                    font-size: 24px;
+               }
+
+               .link-jd {
+                    @include flex-row-between;
+
+                    a {
+                         color: $link;
+                         font-size: 16px;
+                         text-decoration: none;
+                    }
+               }
+          }
+
+          // .bio{
+          // }
+
+          .additional-info {
+
+               .hr-top{
+                    margin-bottom: 15px;
+               }
+
+               .hr-bottom{
+                    margin-top: 5px;
+               }
+
+               .ai-ul {
+                    @include flex-row-between;
+
+                    li {
+                         list-style: none;
+                         margin-bottom: 10px;
+
+                         i {
+                              margin-right: 10px;
+                         }
+                    }
+               }
+          }
+
+
      }
 
 }
