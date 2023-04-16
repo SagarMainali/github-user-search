@@ -7,7 +7,7 @@ function App() {
      const [darkmode, setDarkMode] = useState<boolean>(true)
 
      return (
-          <div>
+          <div className='app'>
                <Header />
                <SearchResult />
           </div>
