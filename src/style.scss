@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+
+
+@mixin flex-props{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+$darkbg: #23272F;
+$lightbg: #FFFFFF;
+
+*{
+     margin: 0;
+     box-sizing: border-box;
+     font-family: 'Actor';
+}
+
+body{
+     background-color: $darkbg;
+}
+
+.header{
+     @include flex-props;
+}
