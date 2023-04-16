@@ -9,6 +9,7 @@ function SearchResult() {
       </div>
 
       <div className="data-container">
+
         <div className="number-data">
           <div className="nd repos">
             <span>22</span>
@@ -24,39 +25,39 @@ function SearchResult() {
           </div>
         </div>
 
-        <div className="basic-info">
-          <h2>Sagar Mainali</h2>
-          <div className="link-jd">
-            <a href="">@Sagar Mainali</a>
-            <span>Joined - 14 Apr, 2023</span>
+        <div className="for-padding">
+          <div className="basic-info">
+            <h2>Sagar Mainali</h2>
+            <div className="link-jd">
+              <a href="">@Sagar Mainali</a>
+              <span>Joined - 14 Apr, 2023</span>
+            </div>
           </div>
-        </div>
 
-        <div className="bio">
-          Computer Enthusiast
-        </div>
-
-
-        <div className="additional-info">
-          <hr className="hr-top"/>
-          <div className="ai-ul">
-            <ul className="first-ul">
-              <li className="location"><i className="fa-solid fa-location-dot"></i>Kathmandu</li>
-              <li className="office"><i className="fa-solid fa-building"></i>Not available</li>
-              <li className="email"><i className="fa-solid fa-envelope"></i>Not available</li>
-            </ul>
-            <ul className="second-ul">
-              <li className="blog"><i className="fa-solid fa-link"></i>Not available</li>
-              <li className="twitter"><i className="fa-brands fa-twitter"></i>Not available</li>
-              <li className="hireable"><i className="fa-solid fa-check"></i>Hireable</li>
-            </ul>
+          <div className="bio">
+            Computer Enthusiast
           </div>
-          <hr className="hr-bottom"/>
-        </div>
 
+          <div className="additional-info">
+            <hr className="hr-top" />
+            <div className="ai-ul">
+              <ul className="first-ul">
+                <li className="location"><i className="fa-solid fa-location-dot"></i>Kathmandu</li>
+                <li className="office"><i className="fa-solid fa-building"></i>Not available</li>
+                <li className="email"><i className="fa-solid fa-envelope"></i>Not available</li>
+              </ul>
+              <ul className="second-ul">
+                <li className="blog"><i className="fa-solid fa-link"></i>Not available</li>
+                <li className="twitter"><i className="fa-brands fa-twitter"></i>Not available</li>
+                <li className="hireable"><i className="fa-solid fa-check"></i>Hireable</li>
+              </ul>
+            </div>
+            <hr className="hr-bottom" />
+          </div>
 
-        <div className="last-activity">
-          27 June, 2023
+          <div className="last-activity">
+            Last Activity - 27 June, 2023
+          </div>
         </div>
       </div>
     </div>

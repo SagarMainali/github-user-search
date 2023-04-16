@@ -50,6 +50,8 @@ body {
      margin: auto;
 }
 
+// header component
+
 .header {
      @include flex-row-center;
      margin-top: 40px;
@@ -68,7 +70,6 @@ body {
           }
      }
 
-
      .input-container {
           margin: 0 15px;
           height: 50px;
@@ -82,9 +83,13 @@ body {
                height: 100%;
                border: 0;
                outline: 0;
-               padding: 15px;
+               padding: 18px;
                font-size: 16px;
                letter-spacing: .6px;
+
+               &::placeholder {
+                    color: $ph-sa;
+               }
           }
 
           .glass-container {
@@ -114,12 +119,14 @@ body {
      }
 }
 
+// search-result component
+
 .search-result {
      width: 100%;
      display: grid;
      grid-template-columns: 200px 500px;
      color: $light;
-     margin-top: 30px;
+     margin-top: 40px;
 
      .profile-container {
           width: 200px;
@@ -162,54 +169,61 @@ body {
                          font-size: 34px;
                          margin-bottom: 6px;
                     }
-               }
-          }
 
-          .basic-info {
-
-               h2 {
-                    font-size: 24px;
-               }
-
-               .link-jd {
-                    @include flex-row-between;
-
-                    a {
-                         color: $link;
-                         font-size: 16px;
-                         text-decoration: none;
+                    p {
+                         font-size: 14px;
                     }
                }
           }
 
-          // .bio{
-          // }
+          .for-padding {
+               padding: 0 18px;
+               @include flex-col-gap;
 
-          .additional-info {
+               .basic-info {
 
-               .hr-top{
-                    margin-bottom: 15px;
+                    h2 {
+                         font-size: 24px;
+                    }
+
+                    .link-jd {
+                         @include flex-row-between;
+
+                         a {
+                              color: $link;
+                              font-size: 16px;
+                              text-decoration: none;
+                         }
+                    }
                }
 
-               .hr-bottom{
-                    margin-top: 5px;
-               }
+               // .bio{
+               // }
 
-               .ai-ul {
-                    @include flex-row-between;
+               .additional-info {
 
-                    li {
-                         list-style: none;
-                         margin-bottom: 10px;
+                    .hr-top {
+                         margin-bottom: 15px;
+                    }
 
-                         i {
-                              margin-right: 10px;
+                    .hr-bottom {
+                         margin-top: 5px;
+                    }
+
+                    .ai-ul {
+                         @include flex-row-between;
+
+                         li {
+                              list-style: none;
+                              margin-bottom: 12px;
+
+                              i {
+                                   margin-right: 10px;
+                              }
                          }
                     }
                }
           }
-
-
      }
 
 }
