@@ -17,10 +17,12 @@ function Header({ darkMode, changeTheme }: Props) {
         </div>
       </div>
 
-      {darkMode
-        ? <i className="fa-solid fa-sun" onClick={changeTheme}></i>
-        : <i className="fa-solid fa-moon" onClick={changeTheme}></i>}
-    </div>
+      {
+        darkMode
+          ? <i className="fa-solid fa-sun" onClick={changeTheme}></i>
+          : <i className="fa-solid fa-moon" onClick={changeTheme}></i>
+      }
+    </div >
   )
 }
 

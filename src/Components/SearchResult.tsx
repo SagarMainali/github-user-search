@@ -1,4 +1,5 @@
-function SearchResult() {
+
+export function SearchResult() {
   return (
     <div className="search-result">
 
@@ -61,4 +62,11 @@ function SearchResult() {
   )
 }
 
-export default SearchResult
+export function NoUserFound() {
+  return (
+    <div className="empty">
+      No User Found
+    </div>
+  )
+}
+

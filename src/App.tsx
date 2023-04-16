@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Header from './Components/Header'
-import SearchResult from './Components/SearchResult'
+import { SearchResult } from './Components/SearchResult'
 
 function App() {
 
@@ -14,7 +14,8 @@ function App() {
      }
 
      return (
-          <div className='app'>
+          // <div className={`app${darkMode ? '' : ' app-light'}`}>
+          <div className={`app${darkMode ? '' : ' app-light'}`}>
                <Header darkMode={darkMode} changeTheme={changeTheme} />
                <SearchResult />
           </div>
