@@ -1,6 +1,13 @@
+import { FaSearch } from 'react-icons/fa'
+
 function Header() {
   return (
-    <div>Header</div>
+    <div className="header">
+      <div className="input-container">
+        <input type="text" placeholder="Search Users" />
+        <FaSearch />
+      </div>
+    </div>
   )
 }
 
