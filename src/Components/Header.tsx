@@ -1,4 +1,9 @@
-function Header() {
+type Props = {
+  darkMode: boolean,
+  changeTheme: () => void
+}
+
+function Header({ darkMode, changeTheme }: Props) {
   return (
     <div className="header">
       <div className="github-icon-container">
@@ -12,7 +17,9 @@ function Header() {
         </div>
       </div>
 
-      <i className="fa-solid fa-sun"></i>
+      {darkMode
+        ? <i className="fa-solid fa-sun" onClick={changeTheme}></i>
+        : <i className="fa-solid fa-moon" onClick={changeTheme}></i>}
     </div>
   )
 }

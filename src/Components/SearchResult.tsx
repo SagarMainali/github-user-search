@@ -62,5 +62,3 @@ function SearchResult() {
 }
 
 export default SearchResult
-
-{/* <i className="fa-solid fa-moon"></i> */ }

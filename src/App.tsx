@@ -4,11 +4,18 @@ import SearchResult from './Components/SearchResult'
 
 function App() {
 
-     const [darkmode, setDarkMode] = useState<boolean>(true)
+     const [darkMode, setDarkMode] = useState<boolean>(true)
+     console.log(darkMode)
+
+     function changeTheme() {
+          setDarkMode(
+               prevTheme => !prevTheme
+          )
+     }
 
      return (
           <div className='app'>
-               <Header />
+               <Header darkMode={darkMode} changeTheme={changeTheme} />
                <SearchResult />
           </div>
      )
