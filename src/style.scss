@@ -135,7 +135,7 @@ body {
      margin-top: 30px;
 
      .profile-container {
-          
+
           .img-container {
                margin: auto;
                box-sizing: content-box;
@@ -223,5 +223,19 @@ body {
                     }
                }
           }
+     }
+}
+
+@media all and (max-width: 550px) {
+     body {
+          background-color: red !important;
+     }
+
+     .input-container {
+          width: 350px !important;
+     }
+
+     .search-result {
+          width: 450px;
      }
 }
