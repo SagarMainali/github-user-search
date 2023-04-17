@@ -98,6 +98,8 @@ $link: #539BF5;
                height: 100%;
                background-color: $search-icon-bg;
                cursor: pointer;
+               outline: 0;
+               border: 0;
                @include flex-row-center;
 
                .fa-magnifying-glass {
@@ -129,6 +131,13 @@ $link: #539BF5;
 }
 
 // search-result component
+
+.no-user-found{
+     width: 500;
+     color: $light;
+     margin-top: 30px;
+     text-align: center;
+}
 
 .search-result {
      @include flex-col-gap;

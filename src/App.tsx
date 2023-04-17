@@ -1,30 +1,13 @@
 import { useState } from 'react'
 import Header from './Components/Header'
-import { SearchResult } from './Components/SearchResult'
-
-type UserData = {
-     imageUrl: string,
-     repos: number,
-     followers: number,
-     following: number,
-     userName: string,
-     loginName: string,
-     githubUrl: string,
-     joinedDate: string,
-     bio: string | null,
-     location: string | null,
-     company: string | null,
-     email: string | null,
-     blog: string | null,
-     twitterUserName: string | null,
-     hireable: boolean,
-     lastActivity: string,
-}
+import { SearchResult, NoUserFound } from './Components/SearchResult'
+import UserData from './model'
 
 function App() {
 
-     const [data, setData] = useState<UserData>({})
      const [darkMode, setDarkMode] = useState<boolean>(true)
+
+     const [data, setData] = useState<UserData | null>(null)
 
      function changeTheme() {
           setDarkMode(
@@ -32,11 +15,19 @@ function App() {
           )
      }
 
+     function getData(userInput: string) {
+          // e.preventDefault();
+          const searchedName = userInput.split(' ').join('')
+          fetch(`https://api.github.com/users/${searchedName}`)
+               .then(result => result.json())
+               .then(data => setData(data))
+     }
+
      return (
           // <div className={`app${darkMode ? '' : ' app-light'}`}>
           <div className={`app${darkMode ? '' : ' app-light'}`}>
-               <Header darkMode={darkMode} changeTheme={changeTheme} />
-               <SearchResult />
+               <Header darkMode={darkMode} changeTheme={changeTheme} getData={getData} />
+               {data ? <SearchResult data={data} /> : <NoUserFound />}
           </div>
      )
 }

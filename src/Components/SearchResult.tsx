@@ -1,5 +1,9 @@
+import UserData from '../model'
+type Props = {
+  data: UserData | null
+}
 
-export function SearchResult() {
+export function SearchResult({ data }: Props) {
   return (
     <div className="search-result">
 
@@ -11,7 +15,7 @@ export function SearchResult() {
 
       <div className="numbered-data">
         <div className="nd repos">
-          <span>22</span>
+          <span>44</span>
           <p>Repos</p>
         </div>
         <div className="nd followers">
@@ -64,7 +68,7 @@ export function SearchResult() {
 
 export function NoUserFound() {
   return (
-    <div className="empty">
+    <div className="no-user-found">
       No User Found
     </div>
   )

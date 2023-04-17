@@ -1,9 +1,15 @@
+import { useState } from "react"
+
 type Props = {
   darkMode: boolean,
-  changeTheme: () => void
+  changeTheme: () => void,
+  getData: (userInput: string) => void
 }
 
-function Header({ darkMode, changeTheme }: Props) {
+function Header({ darkMode, changeTheme, getData }: Props) {
+
+  const [input, setInput] = useState<string>('')
+
   return (
     <div className="header">
       <div className="github-icon-container">
@@ -11,10 +17,10 @@ function Header({ darkMode, changeTheme }: Props) {
       </div>
 
       <div className="input-container">
-        <input className="search-user" type="text" placeholder="Search Users -> sagarmainali" />
-        <div className="glass-container">
+        <input className="search-user" type="text" placeholder="Search Users -> sagarmainali" onChange={(e) => setInput(e.target.value)} />
+        <button className="glass-container" onClick={() => getData(input)}>
           <i className="fa-solid fa-magnifying-glass"></i>
-        </div>
+        </button>
       </div>
 
       {
