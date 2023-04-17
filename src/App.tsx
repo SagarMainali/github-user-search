@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Header from './Components/Header'
-import Message from './Components/Message'
+import UserNotFound from './Components/UserNotFound'
 import SearchResult from './Components/SearchResult'
 import { UserData } from './model'
 
@@ -30,7 +30,7 @@ function App() {
 
      const [data, setData] = useState<UserData | null>(null)
 
-     const [message, setMessage] = useState<string>('Github User Search')
+     const [message, setMessage] = useState<string>('')
 
      function changeTheme() {
           setDarkMode(
@@ -46,8 +46,8 @@ function App() {
                     .then(receivedData => {
                          if (receivedData.login) setData(receivedData)
                          else {
-                              setMessage('User Not Found')
-                              // setData(null)
+                              setMessage(`Your searched query doesn't match any user.`)
+                              setData(null)
                          }
                     })
           }
@@ -60,7 +60,7 @@ function App() {
      return (
           <div className={`app${darkMode ? '' : ' app-light'}`}>
                <Header darkMode={darkMode} changeTheme={changeTheme} getData={getData} />
-               {!data ? <Message message={message} /> : <SearchResult data={data} />}
+               {!data ? <UserNotFound message={message} darkMode={darkMode} /> : <SearchResult data={data} />}
           </div>
      )
 }
