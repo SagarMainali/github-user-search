@@ -56,7 +56,7 @@ export function SearchResult({ data }: Props) {
           <h2>{data.name}</h2>
           <div className="link-jd">
             <a href={data.html_url}>@{data.login}</a>
-            <span>Joined - {data.created_at}</span>
+            <span>Joined - {data.created_at.split('T').slice(0, 1)}</span>
           </div>
         </div>
 
@@ -75,14 +75,14 @@ export function SearchResult({ data }: Props) {
             <ul className="second-ul">
               <li className="blog"><i className="fa-solid fa-link"></i>{data.blog ? data.blog : 'Not available'}</li>
               <li className="twitter"><i className="fa-brands fa-twitter"></i>{data.twitter_username ? data.twitter_username : 'Not available'}</li>
-              <li className="hireable"><i className="fa-solid fa-file-code"></i><a href={ data.html_url+'?tab=repositories'}>Repositories</a></li>
+              <li className="hireable"><i className="fa-solid fa-file-code"></i><a href={data.html_url + '?tab=repositories'}>Repositories</a></li>
             </ul>
           </div>
           <hr className="hr-bottom" />
         </div>
 
         <div className="last-activity">
-          Latest Profile Update - {data.updated_at}
+          Latest Profile Update - {data.updated_at.split('T').slice(0, 1)}
         </div>
       </div>
     </div>
