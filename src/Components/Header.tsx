@@ -11,6 +11,7 @@ function Header({ darkMode, changeTheme, getData }: Props) {
 
   const [input, setInput] = useState<string>('')
 
+  // debouncing the original function
   function debounce(callback: (input: string) => void, delay: number) {
     let timer: number
     return function (input: string) {
@@ -19,9 +20,15 @@ function Header({ darkMode, changeTheme, getData }: Props) {
     }
   }
 
+  // calling the returned function from debounce function
   const debouncedFunction = debounce((input: string) => {
     getData(input)
-  }, 1000)
+  }, 300)
+
+  // handling enter key
+  function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>): void {
+    event.key === 'Enter' && debouncedFunction(input)
+  }
 
   return (
     <div className="header">
@@ -30,7 +37,7 @@ function Header({ darkMode, changeTheme, getData }: Props) {
       </div>
 
       <div className="input-container">
-        <input className="search-user" type="text" placeholder="Search Users" onChange={(e) => setInput(e.target.value)} />
+        <input className="search-user" type="text" placeholder="Search Users" onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} />
         <button className="glass-container" onClick={() => debouncedFunction(input)} >
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
