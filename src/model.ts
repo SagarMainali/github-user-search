@@ -1,4 +1,4 @@
-export type UserDataSuccess = {
+export type UserData = {
   avatar_url: string,
   public_repos: number,
   followers: number,

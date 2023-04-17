@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './Components/Header'
 import Message from './Components/Message'
 import SearchResult from './Components/SearchResult'
-import { UserDataSuccess } from './model'
+import { UserData } from './model'
 
 // type UserDataSuccess = {
 //      avatar_url: string,
@@ -28,7 +28,7 @@ function App() {
 
      const [darkMode, setDarkMode] = useState<boolean>(true)
 
-     const [data, setData] = useState<UserDataSuccess | null>(null)
+     const [data, setData] = useState<UserData | null>(null)
 
      const [message, setMessage] = useState<string>('Github User Search')
 
@@ -47,11 +47,15 @@ function App() {
                          if (receivedData.login) setData(receivedData)
                          else {
                               setMessage('User Not Found')
-                              setData(null)
+                              // setData(null)
                          }
                     })
           }
      }
+
+     useEffect(() =>
+          getData('sagarmainali')
+          , [])
 
      return (
           <div className={`app${darkMode ? '' : ' app-light'}`}>
