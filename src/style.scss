@@ -154,6 +154,7 @@ a {
      .error-img {
           width: 100%;
           text-align: center;
+          transition: 300ms;
 
           img {
                margin-top: 30px;
@@ -162,7 +163,7 @@ a {
           }
      }
 
-     hr{
+     hr {
           margin-top: 15px;
      }
 }

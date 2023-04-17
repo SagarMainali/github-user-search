@@ -66,9 +66,3 @@ function App() {
 }
 
 export default App
-
-// todo
-// display separate component at first reload
-// display no result when no user found
-// manage multi lines 'bio'
-// handle enter keyword press
