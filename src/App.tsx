@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import Header from './Components/Header'
+import Message from './Components/Message'
 import SearchResult from './Components/SearchResult'
-import UserNotFound from './Components/UserNotFound'
-import ShowFirst from './ShowFirst'
-import UserData from './model'
+import { UserDataSuccess } from './model'
 
-// type UserData = {
+// type UserDataSuccess = {
 //      avatar_url: string,
 //      public_repos: number,
 //      followers: number,
@@ -26,9 +25,12 @@ import UserData from './model'
 
 function App() {
 
+
      const [darkMode, setDarkMode] = useState<boolean>(true)
 
-     const [data, setData] = useState<UserData | null>(null)
+     const [data, setData] = useState<UserDataSuccess | null>(null)
+
+     const [message, setMessage] = useState<string>('Github User Search')
 
      function changeTheme() {
           setDarkMode(
@@ -37,18 +39,24 @@ function App() {
      }
 
      function getData(userInput: string) {
-          const searchedName = userInput.split(' ').join('')
-          fetch(`https://api.github.com/users/${searchedName}`)
-               .then(result => result.json())
-               .then(data => setData(data))
+          if (userInput) {
+               const searchedName = userInput.split(' ').join('')
+               fetch(`https://api.github.com/users/${searchedName}`)
+                    .then(result => result.json())
+                    .then(receivedData => {
+                         if (receivedData.login) setData(receivedData)
+                         else {
+                              setMessage('User Not Found')
+                              setData(null)
+                         }
+                    })
+          }
      }
 
      return (
-          // <div className={`app${darkMode ? '' : ' app-light'}`}>
           <div className={`app${darkMode ? '' : ' app-light'}`}>
                <Header darkMode={darkMode} changeTheme={changeTheme} getData={getData} />
-               {/* {!data && <ShowFirst />} */}
-               {data ? <SearchResult data={data} /> : <UserNotFound />}
+               {!data ? <Message message={message} /> : <SearchResult data={data} />}
           </div>
      )
 }

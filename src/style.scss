@@ -61,7 +61,7 @@ a {
 // header component
 
 .header {
-     @include flex-row-center;
+     @include flex-row-between;
      width: 500px;
      margin: auto;
      color: $light;
@@ -87,6 +87,9 @@ a {
           display: flex;
           border-radius: 8px;
           overflow: hidden;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
 
           input {
                width: 85%;
@@ -127,8 +130,6 @@ a {
 
      .fa-sun,
      .fa-moon {
-          position: absolute;
-          right: 0px;
           font-size: 18px;
           cursor: pointer;
           transition: 200ms;
@@ -140,15 +141,14 @@ a {
      }
 }
 
-// search-result component
-
-.user-not-found {
+.message {
      width: 500px;
      color: $light;
-     margin-top: 60px;
-     text-align: center;
-     background-color: red
+     margin: auto;
+     margin-top: 30px;
 }
+
+// search-result component
 
 .search-result {
      @include flex-col-gap;

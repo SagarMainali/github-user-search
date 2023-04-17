@@ -1,6 +1,6 @@
-import UserData from '../model'
+import { UserDataSuccess } from '../model'
 
-// type UserData = {
+// type UserDataSuccess = {
 //   avatar_url: string,
 //   public_repos: number,
 //   followers: number,
@@ -20,7 +20,7 @@ import UserData from '../model'
 // }
 
 type Props = {
-  data: UserData
+  data: UserDataSuccess
 }
 
 function SearchResult({ data }: Props) {

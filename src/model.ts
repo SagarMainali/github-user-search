@@ -1,4 +1,4 @@
-type UserData = {
+export type UserDataSuccess = {
   avatar_url: string,
   public_repos: number,
   followers: number,
@@ -16,4 +16,3 @@ type UserData = {
   updated_at: string,
 }
 
-export default UserData
