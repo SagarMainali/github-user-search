@@ -46,6 +46,10 @@ a {
      text-decoration: none;
 }
 
+.link-disable {
+     pointer-events: none;
+}
+
 .app {
      background-color: $dark;
      padding: 20px 0;

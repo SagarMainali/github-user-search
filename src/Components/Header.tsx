@@ -17,7 +17,7 @@ function Header({ darkMode, changeTheme, getData }: Props) {
       </div>
 
       <div className="input-container">
-        <input className="search-user" type="text" placeholder="Search Users -> sagarmainali" onChange={(e) => setInput(e.target.value)} />
+        <input className="search-user" type="text" placeholder="Search Users" onChange={(e) => setInput(e.target.value)} />
         <button className="glass-container" onClick={() => getData(input)}>
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
