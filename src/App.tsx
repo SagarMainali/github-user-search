@@ -35,7 +35,6 @@ function App() {
      }
 
      function getData(userInput: string) {
-          // e.preventDefault();
           const searchedName = userInput.split(' ').join('')
           fetch(`https://api.github.com/users/${searchedName}`)
                .then(result => result.json())
@@ -52,3 +51,9 @@ function App() {
 }
 
 export default App
+
+// todo
+// handle enter keyword press
+// manage multi lines 'bio'
+// display no result when no user found
+// display separate component at first reload
