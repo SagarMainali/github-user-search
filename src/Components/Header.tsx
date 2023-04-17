@@ -6,10 +6,6 @@ type Props = {
   getData: (userInput: string) => void
 }
 
-type MyFunc = {
-  callback: (...args: unknown[]) => void
-}
-
 // Header Component
 function Header({ darkMode, changeTheme, getData }: Props) {
 
