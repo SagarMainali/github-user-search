@@ -6,9 +6,26 @@ type Props = {
   getData: (userInput: string) => void
 }
 
+type MyFunc = {
+  callback: (...args: unknown[]) => void
+}
+
+// Header Component
 function Header({ darkMode, changeTheme, getData }: Props) {
 
   const [input, setInput] = useState<string>('')
+
+  function debounce(callback: (input: string) => void, delay: number) {
+    let timer: number
+    return function (input: string) {
+      clearTimeout(timer)
+      timer = setTimeout(() => callback(input), delay)
+    }
+  }
+
+  const debouncedFunction = debounce((input: string) => {
+    getData(input)
+  }, 1000)
 
   return (
     <div className="header">
@@ -18,7 +35,7 @@ function Header({ darkMode, changeTheme, getData }: Props) {
 
       <div className="input-container">
         <input className="search-user" type="text" placeholder="Search Users" onChange={(e) => setInput(e.target.value)} />
-        <button className="glass-container" onClick={() => getData(input)} >
+        <button className="glass-container" onClick={() => debouncedFunction(input)} >
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>

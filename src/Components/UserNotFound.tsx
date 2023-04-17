@@ -1,6 +1,6 @@
 
-import error_img_dark from '../../public/error-img-dark.png'
-import error_img_light from '../../public/error-img-light.png'
+import error_img_dark from './assets/error-img-dark.png'
+import error_img_light from './assets/error-img-light.png'
 
 type Props = {
   message: string,
