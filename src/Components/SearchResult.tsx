@@ -23,7 +23,7 @@ type Props = {
   data: UserData
 }
 
-export function SearchResult({ data }: Props) {
+function SearchResult({ data }: Props) {
 
   console.log(data)
 
@@ -98,11 +98,4 @@ export function SearchResult({ data }: Props) {
   )
 }
 
-export function NoUserFound() {
-  return (
-    <div className="no-user-found">
-      No User Found
-    </div>
-  )
-}
-
+export default SearchResult

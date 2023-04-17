@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Header from './Components/Header'
-import { SearchResult, NoUserFound } from './Components/SearchResult'
+import SearchResult from './Components/SearchResult'
+import UserNotFound from './Components/UserNotFound'
+import ShowFirst from './ShowFirst'
 import UserData from './model'
 
 // type UserData = {
@@ -45,7 +47,8 @@ function App() {
           // <div className={`app${darkMode ? '' : ' app-light'}`}>
           <div className={`app${darkMode ? '' : ' app-light'}`}>
                <Header darkMode={darkMode} changeTheme={changeTheme} getData={getData} />
-               {data ? <SearchResult data={data} /> : <NoUserFound />}
+               {/* {!data && <ShowFirst />} */}
+               {data ? <SearchResult data={data} /> : <UserNotFound />}
           </div>
      )
 }
@@ -53,7 +56,7 @@ function App() {
 export default App
 
 // todo
-// handle enter keyword press
-// manage multi lines 'bio'
-// display no result when no user found
 // display separate component at first reload
+// display no result when no user found
+// manage multi lines 'bio'
+// handle enter keyword press
