@@ -55,7 +55,7 @@ export function SearchResult() {
         </div>
 
         <div className="last-activity">
-          Last Activity - 27 June, 2023
+          Latest Profile Update - 27 June, 2023
         </div>
       </div>
     </div>
