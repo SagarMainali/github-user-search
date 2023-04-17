@@ -30,7 +30,7 @@ export function SearchResult({ data }: Props) {
 
       <div className="for-padding">
         <div className="basic-info">
-          <h2>Sagar Mainali</h2>
+          <h2>{}</h2>
           <div className="link-jd">
             <a href="">@Sagar Mainali</a>
             <span>Joined - 14 Apr, 2023</span>
