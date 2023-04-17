@@ -32,13 +32,13 @@ function App() {
 
      const [message, setMessage] = useState<string>('')
 
-     function changeTheme() {
+     function changeTheme(): void {
           setDarkMode(
                prevTheme => !prevTheme
           )
      }
 
-     function getData(userInput: string) {
+     function getData(userInput: string): void {
           if (userInput) {
                const searchedName = userInput.split(' ').join('')
                fetch(`https://api.github.com/users/${searchedName}`)
