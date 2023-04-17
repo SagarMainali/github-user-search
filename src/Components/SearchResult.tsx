@@ -1,65 +1,88 @@
 import UserData from '../model'
+
+// type UserData = {
+//   avatar_url: string,
+//   public_repos: number,
+//   followers: number,
+//   following: number,
+//   name: string,
+//   login: string,
+//   html_url: string,
+//   created_at: string,
+//   bio: string | null,
+//   location: string | null,
+//   company: string | null,
+//   email: string | null,
+//   blog: string | null,
+//   twitter_username: string | null,
+//   hireable: boolean,
+//   updated_at: string,
+// }
+
 type Props = {
-  data: UserData | null
+  data: UserData
 }
 
 export function SearchResult({ data }: Props) {
+
+  console.log(data)
+
   return (
     <div className="search-result">
 
       <div className="profile-container">
         <div className="img-container">
-          <img className='img' src="https://avatars.githubusercontent.com/u/77186948?v=4" alt="pp" />
+          <img className='img' src={data.avatar_url} alt="pp" />
         </div>
       </div>
 
       <div className="numbered-data">
         <div className="nd repos">
-          <span>44</span>
+          <span>{data.public_repos}</span>
           <p>Repos</p>
         </div>
         <div className="nd followers">
-          <span>18</span>
+          <span>{data.followers}</span>
           <p>Followers</p>
         </div>
         <div className="nd following">
-          <span>8</span>
+          <span>{data.following}</span>
           <p>Following</p>
         </div>
       </div>
 
       <div className="for-padding">
         <div className="basic-info">
-          <h2>{}</h2>
+          <h2>{data.name}</h2>
           <div className="link-jd">
-            <a href="">@Sagar Mainali</a>
-            <span>Joined - 14 Apr, 2023</span>
+            <a href={data.html_url}>{data.login}</a>
+            <span>Joined - {data.created_at}</span>
           </div>
         </div>
 
         <div className="bio">
-          Computer Enthusiast
+          {data.bio ? data.bio : 'Not available'}
         </div>
 
         <div className="additional-info">
           <hr className="hr-top" />
           <div className="ai-ul">
             <ul className="first-ul">
-              <li className="location"><i className="fa-solid fa-location-dot"></i>Kathmandu</li>
-              <li className="office"><i className="fa-solid fa-building"></i>Not available</li>
-              <li className="email"><i className="fa-solid fa-envelope"></i>Not available</li>
+              <li className="location"><i className="fa-solid fa-location-dot"></i>{data.location ? data.location : 'Not available'}</li>
+              <li className="office"><i className="fa-solid fa-building"></i>{data.company ? data.company : 'Not available'}</li>
+              <li className="email"><i className="fa-solid fa-envelope"></i>{data.email ? data.email : 'Not available'}</li>
             </ul>
             <ul className="second-ul">
-              <li className="blog"><i className="fa-solid fa-link"></i>Not available</li>
-              <li className="twitter"><i className="fa-brands fa-twitter"></i>Not available</li>
-              <li className="hireable"><i className="fa-solid fa-check"></i>Hireable</li>
+              <li className="blog"><i className="fa-solid fa-link"></i>{data.blog ? data.blog : 'Not available'}</li>
+              <li className="twitter"><i className="fa-brands fa-twitter"></i>{data.twitter_username ? data.twitter_username : 'Not available'}</li>
+              <li className="hireable"><i className="fa-solid fa-check"></i>{data.hireable ? data.hireable : 'Not available'}</li>
             </ul>
           </div>
           <hr className="hr-bottom" />
         </div>
 
         <div className="last-activity">
-          Latest Profile Update - 27 June, 2023
+          Latest Profile Update - {data.updated_at}
         </div>
       </div>
     </div>
