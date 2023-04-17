@@ -55,7 +55,7 @@ export function SearchResult({ data }: Props) {
         <div className="basic-info">
           <h2>{data.name}</h2>
           <div className="link-jd">
-            <a href={data.html_url}>{data.login}</a>
+            <a href={data.html_url}>@{data.login}</a>
             <span>Joined - {data.created_at}</span>
           </div>
         </div>
@@ -75,7 +75,7 @@ export function SearchResult({ data }: Props) {
             <ul className="second-ul">
               <li className="blog"><i className="fa-solid fa-link"></i>{data.blog ? data.blog : 'Not available'}</li>
               <li className="twitter"><i className="fa-brands fa-twitter"></i>{data.twitter_username ? data.twitter_username : 'Not available'}</li>
-              <li className="hireable"><i className="fa-solid fa-check"></i>{data.hireable ? data.hireable : 'Not available'}</li>
+              <li className="hireable"><i className="fa-solid fa-file-code"></i><a href={ data.html_url+'?tab=repositories'}>Repositories</a></li>
             </ul>
           </div>
           <hr className="hr-bottom" />
