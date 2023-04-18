@@ -12,12 +12,12 @@ This project has been made using React with typescript.
 
 > Light Mode
 
-![light-mode] (./src/Components/assets/app-light.png)
+![light-mode](./src/Components/assets/app-light.png)
 
 > Dark Mode
 
-![light-mode] (./src/Components/assets/app-dark.png)
+![light-mode](./src/Components/assets/app-dark.png)
 
 > User not found
 
-![light-mode] (./src/Components/assets/user-not-found.png)
+![light-mode](./src/Components/assets/user-not-found.png)
