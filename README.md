@@ -11,12 +11,12 @@ This project has been made using React with typescript.
 
 > Light Mode
 
-<img src="./src/Components/assets/app-light.png"  width="500" height="600">
+<img src="./src/Components/assets/app-light.png"  width="500" height="500">
 
 > Dark Mode
 
-<img src="./src/Components/assets/app-dark.png"  width="500" height="600">
+<img src="./src/Components/assets/app-dark.png"  width="500" height="500">
 
 > User not found
 
-<img src="./src/Components/assets/user-not-found.png"  width="500" height="600">
+<img src="./src/Components/assets/user-not-found.png"  width="500" height="500">
