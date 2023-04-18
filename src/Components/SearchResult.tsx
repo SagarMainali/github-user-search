@@ -61,7 +61,7 @@ function SearchResult({ data }: Props) {
         </div>
 
         <div className="bio">
-          {data.bio ? data.bio : 'Not available'}
+          {data.bio ? data.bio : 'This profile has no bio'}
         </div>
 
         <div className="additional-info">
