@@ -11,10 +11,8 @@ This project has been made using React with typescript.
 
 > Light Mode
 
-![Light Mode UI](./src/Components/assets/app-light.png)
-<img src="./src/Components/assets/app-light.png"  width="300" height="600">
+<img src="./src/Components/assets/app-light.png"  width="500" height="500">
 
 > Dark Mode
 
-![Dark Mode UI](./src/Components/assets/app-dark.png)
-<img src="./src/Components/assets/app-dark.png"  width="300" height="600">
+<img src="./src/Components/assets/app-dark.png"  width="500" height="500">
