@@ -1,4 +1,4 @@
-# github-user-search is an open source project to search **github user's account**.
+# github-user-search is a project that helps to search **github user's account**.
 
 This project has been made using React with typescript.
 
