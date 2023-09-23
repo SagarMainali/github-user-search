@@ -320,6 +320,10 @@ a {
 
           .for-padding {
                color: $dark;
+
+               a{
+                    color: $dark;
+               }
           }
      }
 }
